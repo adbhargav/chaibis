@@ -10,14 +10,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen pointer-events-auto bg-[#050302] text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
