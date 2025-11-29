@@ -132,8 +132,8 @@ const Menu = ({ onCartUpdate }: MenuProps) => {
       const existingItem = prevCart.find((item) => item.id === itemId);
       const updatedCart = existingItem
         ? prevCart.map((item) =>
-            item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-          )
+          item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+        )
         : [...prevCart, { id: itemId, quantity: 1 }];
 
       localStorage.setItem('cart', JSON.stringify(updatedCart));
@@ -167,7 +167,7 @@ const Menu = ({ onCartUpdate }: MenuProps) => {
     collectionOptions.find((option) => option.value === activeCollection) ?? collectionOptions[0];
 
   return (
-    <section id="menu" className="py-12 sm:py-16 bg-transparent text-[#f5eddc]">
+    <section className="py-12 sm:py-16 bg-transparent text-[#f5eddc]">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="mb-6 sm:mb-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#f5eddc]">Our Menu</h2>
@@ -201,9 +201,8 @@ const Menu = ({ onCartUpdate }: MenuProps) => {
                             setActiveCollection(option.value);
                             setIsCollectionOpen(false);
                           }}
-                          className={`block w-full text-left px-3 py-2 sm:px-4 sm:py-3 hover:bg-[#1c0a05] ${
-                            option.value === activeCollection ? 'text-[#c87534]' : 'text-[#f5eddc]'
-                          }`}
+                          className={`block w-full text-left px-3 py-2 sm:px-4 sm:py-3 hover:bg-[#1c0a05] ${option.value === activeCollection ? 'text-[#c87534]' : 'text-[#f5eddc]'
+                            }`}
                         >
                           {option.label}
                         </button>
@@ -229,20 +228,18 @@ const Menu = ({ onCartUpdate }: MenuProps) => {
                   <button
                     onClick={() => scrollCategories('left')}
                     disabled={!canScrollLeft}
-                    className={`h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-[#2d1a11] flex items-center justify-center transition ${
-                      canScrollLeft ? 'bg-[#120a07] hover:bg-[#1c0a05]' : 'bg-[#120a07]/40 opacity-50 cursor-not-allowed'
-                    }`}
+                    className={`h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-[#2d1a11] flex items-center justify-center transition ${canScrollLeft ? 'bg-[#120a07] hover:bg-[#1c0a05]' : 'bg-[#120a07]/40 opacity-50 cursor-not-allowed'
+                      }`}
                   >
                     <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 text-[#f5eddc]" />
                   </button>
                   <button
                     onClick={() => scrollCategories('right')}
                     disabled={!canScrollRight}
-                    className={`h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-[#2d1a11] flex items-center justify-center transition ${
-                      canScrollRight
+                    className={`h-8 w-8 sm:h-10 sm:w-10 rounded-full border border-[#2d1a11] flex items-center justify-center transition ${canScrollRight
                         ? 'bg-[#120a07] hover:bg-[#1c0a05]'
                         : 'bg-[#120a07]/40 opacity-50 cursor-not-allowed'
-                    }`}
+                      }`}
                   >
                     <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 text-[#f5eddc]" />
                   </button>
@@ -271,15 +268,13 @@ const Menu = ({ onCartUpdate }: MenuProps) => {
                         <button
                           key={category}
                           onClick={() => setActiveCategory(category)}
-                          className={`relative pb-2 sm:pb-3 px-1.5 sm:px-2 md:px-3 text-[8px] xs:text-[9px] sm:text-xs font-semibold tracking-[0.1em] xs:tracking-[0.14em] sm:tracking-[0.25em] uppercase whitespace-nowrap transition ${
-                            isActive ? 'text-[#f5eddc]' : 'text-[#f5eddc]/40'
-                          }`}
+                          className={`relative pb-2 sm:pb-3 px-1.5 sm:px-2 md:px-3 text-[8px] xs:text-[9px] sm:text-xs font-semibold tracking-[0.1em] xs:tracking-[0.14em] sm:tracking-[0.25em] uppercase whitespace-nowrap transition ${isActive ? 'text-[#f5eddc]' : 'text-[#f5eddc]/40'
+                            }`}
                         >
                           {category}
                           <span
-                            className={`absolute left-0 right-0 -bottom-0.5 h-0.5 transition ${
-                              isActive ? 'bg-[#c87534]' : 'bg-transparent'
-                            }`}
+                            className={`absolute left-0 right-0 -bottom-0.5 h-0.5 transition ${isActive ? 'bg-[#c87534]' : 'bg-transparent'
+                              }`}
                           />
                         </button>
                       );

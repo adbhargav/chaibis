@@ -36,7 +36,7 @@ const bananaLeafSvg = (
 );
 
 const Section = ({ id, children, className = "" }: { id?: string, children: React.ReactNode, className?: string }) => (
-  <section id={id} className={`relative py-12 md:py-16 ${className}`}>{children}</section>
+  <section id={id} className={`relative py-12 md:py-16 scroll-mt-24 ${className}`}>{children}</section>
 );
 
 const Container = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
