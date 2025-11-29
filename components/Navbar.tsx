@@ -92,7 +92,7 @@ const Navbar = ({ cartCount }: NavbarProps) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const navbar = document.getElementById('navbar');
-      if (isMenuOpen && navbar && !navbar.contains(event.target as Node)) {
+      if ((isMenuOpen || isAuthOpen) && navbar && !navbar.contains(event.target as Node)) {
         setIsMenuOpen(false);
         setIsAuthOpen(false);
       }
@@ -102,7 +102,7 @@ const Navbar = ({ cartCount }: NavbarProps) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isAuthOpen]);
 
   // Handle logout
   const handleLogout = () => {
@@ -223,7 +223,7 @@ const Navbar = ({ cartCount }: NavbarProps) => {
 
             {/* Auth Dropdown */}
             {isAuthOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-[#120a07] border border-[#2d1a11] rounded-lg shadow-lg z-50">
+              <div className="absolute right-0 mt-2 w-48 bg-[#120a07] border border-[#2d1a11] rounded-lg shadow-lg z-[60]">
                 <div className="py-1">
                   {isLoggedIn ? (
                     <>
@@ -285,32 +285,32 @@ const Navbar = ({ cartCount }: NavbarProps) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#120a07] border-b border-[#2d1a11] shadow-lg animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#120a07] border-b border-[#2d1a11] shadow-lg animate-in slide-in-from-top-2 duration-200 z-[60]">
           <div className="container px-4 py-3 flex flex-col space-y-3">
             <Link
               href="#menu"
-              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11]"
+              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11] cursor-pointer"
               onClick={() => setIsMenuOpen(false)}
             >
               Menu
             </Link>
             <Link
               href="#our-story"
-              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11]"
+              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11] cursor-pointer"
               onClick={() => setIsMenuOpen(false)}
             >
               Our Story
             </Link>
             <Link
               href="#location"
-              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11]"
+              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11] cursor-pointer"
               onClick={() => setIsMenuOpen(false)}
             >
               Location
             </Link>
             <Link
               href="#contact"
-              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11]"
+              className="py-3 text-[#f5eddc]/90 hover:text-[#ffd9a0] transition-colors font-medium border-b border-[#2d1a11] cursor-pointer"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
