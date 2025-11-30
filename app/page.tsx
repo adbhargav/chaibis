@@ -11,6 +11,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import LocationSection from "@/components/LocationSection";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 /**
  * Chai Bisket — Single‑file Landing Page
@@ -362,25 +363,23 @@ export default function Page() {
               </Button>
               <Button
                 variant="outline"
-                className="py-5 sm:py-6 px-6 sm:px-8 text-base font-medium rounded-full transition-all duration-300"
+                className="py-5 sm:py-6 px-6 sm:px-8 text-base font-medium rounded-full transition-all duration-300 cursor-default hover:bg-transparent"
                 size="lg"
-                asChild
               >
-                <a href="#menu" className="flex items-center justify-center sm:justify-start gap-2">
+                <div className="flex items-center justify-center sm:justify-start gap-2">
                   <ShoppingBag className="h-5 w-5" />
                   Pickup
-                </a>
+                </div>
               </Button>
               <Button
                 variant="outline"
-                className="py-5 sm:py-6 px-6 sm:px-8 text-base font-medium rounded-full transition-all duration-300"
+                className="py-5 sm:py-6 px-6 sm:px-8 text-base font-medium rounded-full transition-all duration-300 cursor-default hover:bg-transparent"
                 size="lg"
-                asChild
               >
-                <a href="#menu" className="flex items-center justify-center sm:justify-start gap-2">
+                <div className="flex items-center justify-center sm:justify-start gap-2">
                   <Truck className="h-5 w-5" />
                   Delivery
-                </a>
+                </div>
               </Button>
             </div>
 

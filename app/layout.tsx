@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${outfit.variable} scroll-smooth`}>
       <body className="min-h-screen pointer-events-auto bg-[#050302] text-white antialiased font-sans">
         {children}
       </body>
